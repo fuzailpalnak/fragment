@@ -8,7 +8,7 @@ install_requires = [
 
 setup(
     name="fragment",
-    version="0.1",
+    version="0.2",
     author="Fuzail Palnak",
     author_email="fuzailpalnak@gmail.com",
     description="Data Section",
