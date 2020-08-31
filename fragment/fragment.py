@@ -30,7 +30,7 @@ class Fragment:
         :param transfer_to:  data to transfer to [np.array]
         :return: transferred data [np.array]
         """
-        assert transfer_to <= transfer_from, (
+        assert transfer_to >= transfer_from, (
             "Expected transfer_to greater than or equal to transfer_from, "
             "Expected >= %s got shape %s." % (transfer_to, transfer_from)
         )
