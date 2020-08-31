@@ -25,7 +25,7 @@ class Fragment:
     def transfer_fragment(self, transfer_from: np.ndarray, transfer_to: np.ndarray):
         """
         TRANSFER THE FRAGMENT PORTION TO BIGGER IMAGE
-
+        shape either 4->[BATCH x W x H x C] or 3->[W x H x C]
         :param transfer_from: data to transfer from transfer [np.array]
         :param transfer_to:  data to transfer to [np.array]
         :return: transferred data [np.array]
@@ -39,7 +39,10 @@ class Fragment:
         part_2_x = self.position[1][0]
         part_2_y = self.position[1][1]
 
-        cropped_image = transfer_to[:, part_1_x:part_1_y, part_2_x:part_2_y, :]
+        if (len(transfer_to.shape)) == 4:
+            cropped_image = transfer_to[:, part_1_x:part_1_y, part_2_x:part_2_y, :]
+        else:
+            cropped_image = transfer_to[part_1_x:part_1_y, part_2_x:part_2_y, :]
 
         merged = cropped_image + transfer_from
 
@@ -55,7 +58,11 @@ class Fragment:
             non_intersected_with_merged = np.multiply(non_intersecting_elements, merged)
             merged = aggregate_merged + non_intersected_with_merged
 
-        transfer_to[:, part_1_x:part_1_y, part_2_x:part_2_y, :] = merged
+        if (len(transfer_to.shape)) == 4:
+            transfer_to[:, part_1_x:part_1_y, part_2_x:part_2_y, :] = merged
+        else:
+
+            transfer_to[part_1_x:part_1_y, part_2_x:part_2_y, :] = merged
         return transfer_to
 
 
