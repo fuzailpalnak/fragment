@@ -5,6 +5,7 @@
 
 
 Splitting the Image in to Multiple fragments of smaller size and joining the fragment data back
+![fragments](https://user-images.githubusercontent.com/24665570/91711219-2b7c8980-eba3-11ea-94d2-8239cf6713c4.gif)
 
 
 ## Installation

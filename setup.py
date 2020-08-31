@@ -11,6 +11,7 @@ setup(
     version="0.2",
     author="Fuzail Palnak",
     author_email="fuzailpalnak@gmail.com",
+    url="https://github.com/fuzailpalnak/fragment",
     description="Data Section",
     long_description=long_description,
     long_description_content_type="text/markdown",
