@@ -34,6 +34,11 @@ class Fragment:
             "Expected transfer_to greater than or equal to transfer_from, "
             "Expected >= %s got shape %s." % (transfer_to, transfer_from)
         )
+
+        assert len(transfer_to.shape) == len(transfer_from.shape), (
+            "Expected to have same number of dimension length, "
+            "got shape %s and %s." % (len(transfer_to.shape), len(transfer_from.shape))
+        )
         part_1_x = self.position[0][0]
         part_1_y = self.position[0][1]
         part_2_x = self.position[1][0]
