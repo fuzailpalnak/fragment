@@ -3,9 +3,8 @@
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
-
-Splitting the Image in to Multiple fragments of smaller size and joining the fragment data back
-![fragments](https://user-images.githubusercontent.com/24665570/91711219-2b7c8980-eba3-11ea-94d2-8239cf6713c4.gif)
+Any extent is a set of smaller fragment extent , which can be as small as *1 x 1* to the *size* of the extent given.
+This library will section the given extent in to specified smaller fragment extent
 
 
 ## Installation
@@ -13,16 +12,24 @@ Splitting the Image in to Multiple fragments of smaller size and joining the fra
     pip install git+https://github.com/fuzailpalnak/fragment.git#egg=fragment
 
 
-## Use
+## Image Fragments
+
+![fragments](https://user-images.githubusercontent.com/24665570/91711219-2b7c8980-eba3-11ea-94d2-8239cf6713c4.gif)
+
+An image extent can be sectioned into many fragments, these fragments holds positional information to where it is located 
+to the original extent
+
+Now this information can be used to extract selected fragments from the Image, perform operation, and transfer the new 
+data to selected position.
+
 
 ```python
 import numpy as np
 from fragment.fragment import ImageFragment
 
-image = np.zeros((1024, 1024, 3))
-new_image = np.zeros((1024, 1024, 3))
-
-image_fragment = ImageFragment.get_image_fragment(fragment_size=(512, 512, 3), org_size=(1024, 1024, 3))
+image = np.zeros((1, 1024, 1024, 3))
+new_image = np.zeros((1, 1024, 1024, 3))
+image_fragment = ImageFragment.image_fragment_4d(fragment_size=(1, 512, 512, 3), org_size=(1, 1024, 1024, 3))
 for fragment in image_fragment:
     # GET DATA THAT BELONGS TO THE FRAGMENT
     fragmented_image = fragment.get_fragment_data(image)
@@ -34,3 +41,6 @@ for fragment in image_fragment:
     new_image = fragment.transfer_fragment(transfer_from=operation_done_on_fragmented_data, transfer_to=new_image)
     
 ```
+
+If image is 3 Dimensional then switch to `image_fragment = ImageFragment.image_fragment_3d(fragment_size=(512, 512, 3), org_size=(1024, 1024, 3))`, 
+this will provide fragments for 3 dimensional image
