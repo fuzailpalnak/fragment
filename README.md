@@ -1,5 +1,5 @@
 # Fragment
-![GitHub](https://img.shields.io/github/license/cypherics/ShapeMerge)
+![GitHub](https://img.shields.io/github/license/fuzailpalnak/fragment)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
