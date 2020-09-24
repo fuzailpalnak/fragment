@@ -1,8 +1,7 @@
 import math
-from typing import Any
+from typing import Tuple
 
 import numpy as np
-from dataclasses import dataclass
 
 
 class Fragment:
@@ -235,9 +234,8 @@ class ImageFragment:
         return self.collection[index]
 
     @staticmethod
-    def fragments(section_dim, img_dim):
+    def fragments(section_dim: Tuple[int, int], img_dim: Tuple[int, int]):
         """
-        Input = either [batch_size, height, width, channel] or [batch_size, height, width, channel]
 
         W = Columns
         H = Rows
@@ -268,7 +266,11 @@ class ImageFragment:
             iter_row = 1
 
     @classmethod
-    def image_fragment_4d(cls, fragment_size: tuple, org_size: tuple):
+    def image_fragment_4d(
+        cls,
+        fragment_size: Tuple[int, int, int, int],
+        org_size: Tuple[int, int, int, int],
+    ):
         """
         fragment size = [batch_size, height, width, channel]
         org_size = [batch_size, height, width, channel]
@@ -299,10 +301,12 @@ class ImageFragment:
         return ImageFragment(fragment_list)
 
     @classmethod
-    def image_fragment_3d(cls, fragment_size: tuple, org_size: tuple):
+    def image_fragment_3d(
+        cls, fragment_size: Tuple[int, int, int], org_size: Tuple[int, int, int]
+    ):
         """
-        fragment size = [batch_size, height, width, channel]
-        org_size = [batch_size, height, width, channel]
+        fragment size = [height, width, channel]
+        org_size = [height, width, channel]
 
         :param fragment_size:
         :param org_size:

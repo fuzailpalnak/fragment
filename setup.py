@@ -18,7 +18,7 @@ setup(
     packages=find_packages(),
     python_requires="~=3.6",
     install_requires=install_requires,
-    keywords="numpy Window Section Array",
+    keywords=["numpy, Window, Section, Array, Stitch, Split"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
