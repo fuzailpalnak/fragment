@@ -7,7 +7,7 @@ install_requires = [
 ]
 
 setup(
-    name="fragment",
+    name="image_fragment",
     version="0.2.1",
     author="Fuzail Palnak",
     author_email="fuzailpalnak@gmail.com",

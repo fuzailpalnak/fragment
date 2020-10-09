@@ -9,7 +9,7 @@ This library will section the given extent in to specified smaller fragment exte
 
 ## Installation
 
-    pip install git+https://github.com/fuzailpalnak/fragment.git#egg=fragment
+    pip install image-fragment
 
 
 ## Image Fragments
