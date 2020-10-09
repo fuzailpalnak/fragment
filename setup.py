@@ -8,7 +8,7 @@ install_requires = [
 
 setup(
     name="image_fragment",
-    version="0.2.1",
+    version="0.2.2",
     author="Fuzail Palnak",
     author_email="fuzailpalnak@gmail.com",
     url="https://github.com/fuzailpalnak/fragment",

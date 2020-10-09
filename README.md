@@ -25,7 +25,7 @@ data to selected position.
 
 ```python
 import numpy as np
-from fragment.fragment import ImageFragment
+from image_fragment.fragment import ImageFragment
 
 image = np.zeros((1, 1024, 1024, 3))
 new_image = np.zeros((1, 1024, 1024, 3))
