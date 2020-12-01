@@ -2,6 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/fuzailpalnak/fragment)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+![Downloads](https://pepy.tech/badge/image-fragment)
 
 Any extent is a set of smaller fragment extent , which can be as small as *1 x 1* to the *size* of the extent given.
 This library will section the given extent in to specified smaller fragment extent
