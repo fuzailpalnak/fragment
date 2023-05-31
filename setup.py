@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 with open("README.md", "r") as fh:
     long_description = fh.read()
 install_requires = [
-    "numpy == 1.19.1",
+    "numpy >= 1.19.1",
 ]
 
 setup(
